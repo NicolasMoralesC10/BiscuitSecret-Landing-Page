@@ -1,0 +1,1103 @@
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar Personalizado */
+/* Variables de color para fácil personalización */
+:root {
+  --primary-color: #3e2723;
+  --secondary-color: #5d4037;
+  --text-color: #fff;
+  --hover-color: #d7ccc8;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Mejorado */
+.navbar {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  transition: background 0.4s ease, padding 0.4s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0.1rem 2.5rem;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  max-height: 40px;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* Estilos para los links del navbar */
+.navbar .nav-link {
+  color: var(--text-color) !important;
+  font-weight: 500;
+  margin: 0 5px;
+  font-size: 0.77rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  padding: 0.9rem 1.5rem;
+}
+
+.navbar .nav-link:hover {
+  color: #ffe0b2 !important;
+  transform: translateY(-2px);
+}
+
+/* Efecto animado: subrayado centrado al pasar el mouse */
+.navbar .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--hover-color);
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Estilos para el botón de menú en dispositivos móviles */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(90deg);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Cambio de estilo al hacer scroll */
+.navbar.scrolled {
+  background: rgba(62, 39, 35, 0.95);
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.buttonLogo {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0rem;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonLogo {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #fec195;
+  --fs-size: 1.8em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Dancing Script", cursive;
+  position: relative;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+.buttonLogo:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+button {
+  font-family: "Dancing Script", cursive;
+  position: relative;
+  padding: 0.35rem 1rem;
+  margin-left: 10px;
+  background: #fec195;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 30px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+.btnContactanos:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+.btnContactanos:hover .star-1 {
+  position: absolute;
+  top: -40%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnContactanos:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnContactanos:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnContactanos:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnContactanos:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnContactanos:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: url("../img/HeroBiscuit.png") no-repeat center center;
+  background-size: cover;
+}
+/* Overlay general para hero */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(94, 82, 80, 0.55);
+  z-index: 1;
+}
+#hero .hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+/* Columnas para hero en pantallas grandes */
+#hero .hero-left,
+#hero .hero-right {
+  flex: 0 0 50%;
+  padding: 1rem;
+}
+.imgHeroRight {
+  padding-top: 40px;
+  padding-right: 35px;
+}
+#hero .hero-left {
+  text-align: left;
+}
+#hero h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #472e29;
+}
+#hero h2 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: rgb(254, 254, 254);
+}
+#hero .hero-right img {
+  margin-left: 50%;
+  margin-top: 15%;
+  width: 100%;
+  height: auto;
+  border: none;
+  box-shadow: none;
+}
+/* Sección de Características */
+#caracteristicas {
+  padding: 60px 0;
+  position: relative;
+  background: linear-gradient(135deg, #ffe0b2, #f3e5ab); /* Degradado de un café medio a un tono algo más profundo */
+  overflow: hidden;
+}
+#caracteristicas p {
+  font-size: 0.9rem;
+}
+#caracteristicas::after {
+  content: "";
+  position: absolute;
+  top: -26px;
+  right: -35px;
+  width: 120px;
+  height: 120px;
+  background: url("../img/dibujo-animado-galletas-chocolate_1281867-4949-Photoroom.png") no-repeat center center;
+  background-size: contain;
+  transform: rotate(50deg);
+}
+.feature-item {
+  text-align: center;
+  padding: 20px;
+}
+.feature-item i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #3e2723;
+}
+
+.section-title {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+
+  /* Degradado para navegadores compatibles */
+  background: linear-gradient(150deg, #3e2723, #855a52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(45deg, #3e2723, #ffe0b2);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  margin-left: 1px;
+}
+
+/* Fondo con degradado para la sección Productos */
+.section-bg {
+  position: relative;
+  background: linear-gradient(135deg, #ffe0b2, #f3e5ab);
+  /* Puedes experimentar con otros tonos: #ffe0b2 y #f3e5ab son tonos cálidos que complementan el café y chocolate */
+  overflow: hidden;
+}
+
+.cookie-icon {
+  width: 190px; /* Ajusta según necesites */
+  height: auto;
+}
+
+.section-title-sobre {
+  position: relative;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #ffe0b2, #5d4037);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title-sobre::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(45deg, #ffe0b2, #4c332d);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  margin-left: 1px;
+}
+
+/* Fondo y decorativo para Sobre Nosotros con tonos café */
+#sobre-nosotros {
+  position: relative;
+  background: linear-gradient(45deg, #3e2723, #5d4037); /* Degradado de café claro a oscuro */
+  overflow: hidden;
+  padding: 60px 0;
+  color: #fff; /* Aseguramos contraste con el fondo oscuro */
+}
+
+#sobre-nosotros::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 5px;
+  width: 200px;
+  height: 200px;
+  background: url("../img/pana3\ -\ copia.png") no-repeat center center;
+  border-radius: 90%;
+  background-size: contain;
+}
+
+/* Contenedor del Timeline */
+.timeline-wrapper {
+  position: relative;
+  margin-top: 5%;
+  padding-left: 30px; /* Se reduce un poco el padding */
+  border-left: 1px solid #d7ccc8;
+}
+
+/* Cada ítem del timeline */
+.timeline-item {
+  margin-bottom: 20px; /* Se reduce el espacio entre ítems */
+  position: relative;
+}
+
+/* Ícono del timeline */
+.timeline-icon {
+  position: absolute;
+  left: -25px; /* Ajuste para alinearlo con el nuevo padding */
+  top: 0;
+  background: #ffe0b2;
+  color: #3e2723;
+  width: 40px; /* Tamaño reducido */
+  height: 40px;
+  line-height: 40px; /* Para centrar el ícono verticalmente */
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.25rem; /* Tamaño de fuente ligeramente menor */
+  border: 2px solid #3e2723;
+}
+
+/* Contenido del ítem */
+.timeline-content {
+  background: #f8ede3;
+  padding: 10px 15px; /* Padding reducido */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h5 {
+  font-size: 1.1rem; /* Fuente un poco más pequeña */
+  margin-bottom: 5px;
+  margin-left: 0.2rem;
+  color: #5d4037;
+}
+
+.timeline-content p {
+  font-size: 0.85rem; /* Fuente reducida */
+  line-height: 1.5;
+  margin-left: 0.2rem;
+  color: #3e2723;
+}
+
+.typed-cursor {
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+} /* Reset y tipografía básica */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sección principal */
+.cookie-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Contenedor de tarjetas */
+.cookie-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* Estilos generales de las tarjetas */
+.card {
+  position: relative;
+  width: 250px;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Efecto hover en la tarjeta */
+/* .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+} */
+
+/* Imagen del producto */
+.cookie-image {
+  width: 210px;
+  height: 210px;
+  object-fit: cover;
+  margin: 20px auto 1rem;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover en la imagen: agrandar ligeramente */
+.card:hover .cookie-image {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.info-box {
+  background: linear-gradient(135deg, #3e2723, #855a52);
+  color: #fff;
+  padding: 12px 10px;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /*   margin-bottom: 20px; */
+}
+
+.info-box .cookie-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.info-box .cookie-desc {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Contenedor y estilo del Badge */
+.discount-badge {
+  background: linear-gradient(135deg, #3e2723, #855a52);
+  color: #fff;
+  padding: 5px 25px;
+  font-size: 0.9rem;
+  margin-left: 40px;
+  margin-right: 40px;
+  /*   margin-top: 20px; */
+  border-radius: 50px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
+}
+
+/* Efecto hover: se escala ligeramente */
+.discount-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Estilos para los íconos y texto interno */
+.discount-badge .star-icon {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+.discount-badge i {
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+.discount-badge .price {
+  font-size: 1.4em;
+}
+
+.upcoming-badge {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.upcoming-badge i {
+  font-size: 1rem;
+}
+
+#productos-container {
+  padding-left: 4rem;
+}
+
+/* 1) Estilos comunes para todas las cards de galleta */
+article.card.chocoOreo,
+article.card.chocochips,
+article.card.red-velvet,
+article.card.avena,
+article.card.masmelo {
+  position: relative;
+  padding: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+
+  /* curva SVG/PNG en la base, igual en todas */
+  background-image: url("../img/3ak.png");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 205% auto;
+  border: #3e2723 1px solid;
+}
+
+/* 2) Ahora, simplemente asigna el fondo de color a cada clase */
+
+/* CHOCO OREO: marrón oscuro */
+article.card.chocoOreo {
+  background-color: #5d4037;
+}
+
+/* CHOCO CHIPS: masa rubia */
+article.card.chocochips {
+  background-color: #6d564f;
+}
+
+/* RED VELVET: rojo glaseado */
+article.card.red-velvet {
+  background-color: #c1121f;
+}
+
+/* AVENA: crema de avena vibrante */
+article.card.avena {
+  background-color: #ffdf7d; /* amarillo avena más luminoso */
+}
+
+/* MASMELO: caramelo claro pastel */
+article.card.masmelo {
+  background-color: #ffd699; /* tonos melocotón suave */
+}
+
+.section-unida {
+  background: linear-gradient(45deg, #3e2723, #5d4037);
+}
+
+/* Filtro y Buscador */
+#producto-filtro {
+  margin-bottom: 30px;
+}
+
+.custom-footer {
+  /* background: linear-gradient(45deg, #3e2723, #5d4037); */
+  color: #fff;
+  padding: 40px 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-footer .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Uso de CSS Grid para una estructura objetiva y adaptable */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-social {
+  /* Opcional: puedes centrar verticalmente o ajustar según tu diseño */
+  display: flex;
+  align-items: center;
+  order: 3;
+}
+
+/* Estilos para la marca */
+.footer-brand {
+  order: 1;
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
+}
+
+.footer-logo-img {
+  max-height: 100px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilos para la navegación */
+.footer-nav {
+  order: 2;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+}
+
+.footer-nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #ffe0b2;
+}
+
+/* Descripción debajo del logo en el footer */
+.footer-description {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.1rem;
+  color: #d7ccc8;
+  margin-top: 20px;
+  max-width: 250px;
+}
+
+/* Pie de página */
+
+.footer-copy {
+  font-family: "Dancing Script", cursive;
+  color: #ffffff; /* Texto gris claro */
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  font-weight: 100;
+}
+
+.footer-copy p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #ffffff; /* Blanco brillante para resaltar */
+  font-weight: 600; /* Más grueso */
+  letter-spacing: 0.5px;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  justify-content: flex-end;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffe0b2;
+  border-radius: 50%;
+  margin: 10px;
+  width: 42px;
+  height: 42px;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877f2;
+  color: #fff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: black;
+  color: #fff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #e4405f;
+  color: #fff;
+} 
+
+/* Elementos decorativos: sutiles para no sobrecargar el diseño */
+/* .section-unida::before,
+.section-unida::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: url("../img/dibujo-animado-galletas-chocolate_1281867-4949-Photoroom.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.1;
+} */
+
+.custom-footer::before {
+  top: -30px;
+  left: -30px;
+}
+
+.custom-footer::after {
+  bottom: -30px;
+  right: -30px;
+}
+
+/* Media Query para móviles: Ajuste de columnas para hero */
+@media (max-width: 768px) {
+  .btnContactanos {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .nav-link {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .buttonLogo {
+    /* Reducimos el tamaño de fuente */
+    --fs-size: 1.5em;
+    /* Movemos el botón un poco más a la izquierda */
+    margin-left: -10px;
+  }
+
+  #productos-container {
+    padding-left: 0rem;
+  }
+
+  /* Asignar 60% para el bloque de texto y 40% para la imagen */
+  #hero {
+    height: 100%;
+  }
+  #hero .hero-left {
+    flex: 0 0 50%;
+  }
+  #hero .hero-right {
+    flex: 0 0 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #hero .hero-left h1 {
+    font-size: 3rem;
+    margin-top: 30%;
+  }
+  #hero .hero-left h2 {
+    font-size: 1.2rem;
+    color: #ffffee;
+  }
+  #hero .hero-right img {
+    width: 150%;
+    height: 100%;
+    margin-left: -30%;
+    margin-top: 30%;
+  }
+
+  /*   #divContainerNav{
+    margin-left: -20%;
+  } */
+  .product-item .card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cookie-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cookie-icon {
+    width: 130px; /* Ajusta según necesites */
+    height: auto;
+    margin-bottom: 5%;
+  }
+
+  .discount-badge {
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-85%);
+    top: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 35px;
+  }
+
+  .cookie-image {
+    margin-top: 50px;
+  }
+
+  /* Los cols de Bootstrap se apilarán automáticamente, pero se ajustan algunos márgenes */
+  .timeline-wrapper {
+    border-left: 0px;
+    padding-left: 10px;
+    margin-top: 5%;
+    padding-top: 10px; /* Se reduce un poco el padding */
+    border-top: 1px solid #d7ccc8;
+  }
+  .timeline-item {
+    margin-bottom: 20px;
+  }
+  .timeline-icon {
+    left: -20px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 1rem;
+  }
+  .timeline-content {
+    padding: 8px 12px;
+  }
+  .timeline-content h5 {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+  }
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+  .footer-social {
+    margin-right: 5%;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .footer-nav {
+    display: none;
+  }
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-nav ul li {
+    margin: 5px 0;
+  }
+
+  .footer-description {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .footer-logo-img {
+    max-height: 50px; /* Reducir un poco la imagen en móviles */
+    margin: 0 auto;
+  }
+}
+
+/* Mejorar el diseño de los botones de categoría */
+.filter-btn {
+  border: 2px solid #3e2723;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: #3e2723;
+  transition: background 0.3s, color 0.3s;
+  margin-bottom: 0.5rem;
+}
+.filter-btn:hover {
+  background: #3e2723;
+  color: #fff;
+}
