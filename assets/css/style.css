@@ -216,6 +216,73 @@ button {
   transition: all 0.8s ease;
 }
 
+.btnCalificaciones:hover {
+  box-shadow: 0 0 25px #fec1958c;
+  background: transparent;
+  color: #3e2723;
+  border-color: #3e2723;
+}
+
+.btnCalificaciones:hover .star-1 {
+  position: absolute;
+  top: -40%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnCalificaciones:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnCalificaciones:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnCalificaciones:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnCalificaciones:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.btnCalificaciones:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
 .btnContactanos:hover {
   background: transparent;
   color: #fec195;
@@ -659,7 +726,7 @@ button {
   padding-left: 4rem;
 }
 
-/* 1) Estilos comunes para todas las cards de galleta */
+/* Estilos comunes para todas las cards de galleta */
 article.card.chocoOreo,
 article.card.chocochips,
 article.card.red-velvet,
@@ -679,7 +746,7 @@ article.card.masmelo {
   border: #3e2723 1px solid;
 }
 
-/* 2) Ahora, simplemente asigna el fondo de color a cada clase */
+/* el fondo de color a cada clase */
 
 /* CHOCO OREO: marrón oscuro */
 article.card.chocoOreo {
@@ -715,6 +782,75 @@ article.card.masmelo {
   margin-bottom: 30px;
 }
 
+.star {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.star:hover {
+  color: #ffc107 !important;
+}
+
+.star.active {
+  color: #ffc107 !important;
+}
+
+.rating-star {
+  user-select: none;
+}
+
+.rating-category {
+  margin-bottom: 1rem;
+}
+
+.category-label {
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.avg-rating-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avg-rating-item:last-child {
+  border-bottom: none;
+}
+
+.section-title-sobre {
+  color: #fff;
+  font-weight: bold;
+}
+
+.bg-dark-custom {
+  background-color: #1a1a1a;
+}
+
+.text-light {
+  color: #f8f9fa !important;
+}
+
+.avg-star {
+  color: #ffc107;
+}
+
+.avg-stars-small {
+  font-size: 0.9rem;
+}
+
+.score-badge {
+  background-color: #fec195;
+  color: #000;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
 .custom-footer {
   /* background: linear-gradient(45deg, #3e2723, #5d4037); */
   color: #fff;
@@ -743,7 +879,6 @@ article.card.masmelo {
 }
 
 .footer-social {
-  /* Opcional: puedes centrar verticalmente o ajustar según tu diseño */
   display: flex;
   align-items: center;
   order: 3;
@@ -903,7 +1038,7 @@ article.card.masmelo {
 .wrapper .instagram:hover .tooltip::before {
   background: #e4405f;
   color: #fff;
-} 
+}
 
 /* Elementos decorativos: sutiles para no sobrecargar el diseño */
 /* .section-unida::before,
@@ -916,6 +1051,20 @@ article.card.masmelo {
   background-size: contain;
   opacity: 0.1;
 } */
+
+/* .btn-send-cal {
+  background: #fec195;
+} */
+
+.cardCalificacion {
+  position: relative;
+  border-radius: 15px;
+  padding: 1.5rem 1rem;
+  background-color: #ffe0b2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+}
 
 .custom-footer::before {
   top: -30px;
@@ -993,6 +1142,7 @@ article.card.masmelo {
   }
 
   .card {
+    margin-top: 5rem;
     width: 100%;
     max-width: 300px;
   }
