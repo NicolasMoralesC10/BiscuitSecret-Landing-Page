@@ -4,8 +4,8 @@ header('Content-Type: application/json; charset=utf-8');
 
 // 1) Configura tus credenciales de MySQL (corregido el typo en dbname)
 $host   = 'localhost';
-$dbname = 'biscuit'; // Corregido: era 'biscuit_landign'
-$user   = 'secret';
+$dbname = 'u810917883_biscuit'; 
+$user   = 'u810917883_secret';
 $pass   = '7j[AgIb7IBD';
 $dsn    = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
 

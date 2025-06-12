@@ -69,8 +69,8 @@ if ($forwarded_ip) {
 
 // 4) Configuración de conexión a MySQL
 $host   = 'localhost';
-$dbname = 'biscuit';
-$user   = 'secret';
+$dbname = 'u810917883_biscuit';
+$user   = 'u810917883_secret';
 $pass   = '7j[AgIb7IBD';
 $dsn    = "mysql:host={$host};dbname={$dbname};charset=utf8mb4";
 
